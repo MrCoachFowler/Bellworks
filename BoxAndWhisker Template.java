@@ -12,7 +12,7 @@ public class BoxandWhisker {
     //NA
 
     //write a main method that:
-    //calculates the 50 percentile of a random set of numbers
+    //calculates the 50 percentile of a random set of 100 numbers between 1 and 200
     //calculates the 25 percentile of the same random set of numbers
     //calculates the 75 percentile of the same random set of numbers
 }
