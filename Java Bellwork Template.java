@@ -1,13 +1,16 @@
 public class Main {
+    //Make attributes to store the following information:
+    //
+
+    
+    //make a constructor
+
     //Make a method following the contract
     //Name: 
     //Purpose: 
     //Input: 
     //Output:
 
-    //Make attributes to store the following information:
-    //
-
-    //write a main method that:
+    //write a test file that:
     //
 }
