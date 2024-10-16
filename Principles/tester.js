@@ -1,7 +1,7 @@
-var wordList = ["who are we?", "tv", "proud to be", "tv hawks!"];
-var loopCounter = 0;
-while(loopCounter < wordList.length)
+let counter = 0
+while(counter < 5)
 {
-    console.log(wordList[loopCounter]);
-    loopCounter++;
+    console.log(counter);
+    counter += 1;
 }
+
