@@ -6,6 +6,10 @@
 #Input: number to count to (int)
 def countNumbers(numRange):
     #write the code for our function
+    counter = 1
+    while counter <= numRange:
+        print(counter)
+        counter += 1
 
 
 

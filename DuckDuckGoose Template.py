@@ -7,4 +7,4 @@ import random
 #Output: string
 
 #write a program that:
-#prints three rounds of duck, duck goose where the number of ducks is a random number between 10 and 12
+#prints three rounds of duck, duck goose where the number of ducks is a random number between 6 and 12
