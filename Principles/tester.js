@@ -1,7 +1,8 @@
-let counter = 0
-while(counter < 5)
+function doThing()
 {
-    console.log(counter);
-    counter += 1;
+    let superImportantVariable = "Breakfast Burritos";
+    return superImportantVariable;
 }
 
+let x = doThing();
+console.log(x);
