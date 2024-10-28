@@ -3,7 +3,9 @@ public class run {
     {
         ShapePrinter printer = new ShapePrinter();
         printer.printShape(8, "rectangle");
+        System.out.println();
         printer.printShape(5,"right triangle");
+        System.out.println();
         printer.printShape(4,"left triangle");
     }
     

@@ -1,7 +1,11 @@
-let counter = 0
-while(counter < 5)
+let counter_thing=0
+function counter(numToCount)
 {
-    console.log(counter);
-    counter += 1;
+    while (counter_thing <= numToCount) {
+        console.log(counter_thing)
+        counter_thing++
+    }
 }
 
+counter(10)
+counter(20)
