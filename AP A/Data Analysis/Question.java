@@ -1,3 +1,4 @@
+package com.analyze;
 public class Question {
     public double averageTime;
     public String key;
