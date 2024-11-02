@@ -1,4 +1,5 @@
 import random
+from matplotlib import pyplot
 
 #name: makeDeck
 #purpose: create a standard 52 card deck
@@ -49,11 +50,15 @@ def createNewShuffledDeck():
 
 deck = createNewShuffledDeck()
 
+playerNames = []
 players = []
+playerCardCounts = {}
 playerCount = int(input('how many players?'))
 for i in range(playerCount):
     player = []
     players.append(player)
+    playerName = "Player " + str(i + 1)
+    playerNames.append(playerName)
 
 #deal the deck
 counter = 0
@@ -63,76 +68,130 @@ while len(deck) > 0:
     players[playerFocusIndex].append(card)
     counter += 1
 
-for player in players:
-    print(player)
-def gameHasBeenWon(players):
-    #see if any player has all the cards
-    for player in players:
-        if len(player) == 52:
-            return True
-    return False
+# for player in players:
+#     print(player)
+
+#add the first card counter to the dictionary
+for i in range(len(players)):
+    playerName = playerNames[i]
+    player = players[i]
+    playerCardCounts[playerName] = [len(player)]
 
 #start the game
-while not gameHasBeenWon(players):
+while len(players) > 1:
     cardsPlayed = []
     cardValues = []
 
-    for playerHand in players:
-        if len(playerHand) == 0:
-            cardValues.append(0)
-        else:
-            card = playerHand.pop()
-            cardsPlayed.append(card)
-            cardValues.append(card[2])
+    #have each player play a card
+    for player in players:
+        card = player.pop(0)
+        cardsPlayed.append(card)
+        cardValues.append(card[2])
 
-    maxCard = max(cardValues)
-    maxCardCount = cardValues.count(maxCard)
+    #See if there is a war
+    maxValue = max(cardValues)
+    isWar = cardValues.count(maxValue) > 1
 
-    if maxCardCount > 1:
-        war = True
-        
-        while war:
-            newCardsPlayed = []
-            newCardValues = []
-            winningPlayerIndices = []
-            for i in range(len(cardValues)):
-                if cardValues[i] == maxCard:
-                    winningPlayerIndices.append(i)
+    if not isWar:
+        #find winning players index
+        #award player at that index all the cards played
+        #reset played card values and played cards
+        winnerIndex = cardValues.index(maxValue)
+        for card in cardsPlayed:
+            players[winnerIndex].append(card)
+        cardsPlayed = []
+        cardValues = []
 
+    else:
+        #continue the war until it stops
+        while isWar and len(players) > 1:
+            #identify all winners
+            winnerIndices = []
+            for i in range(len(players)):
+                if cardValues[i] == maxValue:
+                    winnerIndices.append(i)
+
+            #reset card values and play war
             cardValues = []
             for i in range(len(players)):
-                #see if player amongst winners
-                if not i in winningPlayerIndices or len(players[i]) == 0:
-                    cardValues.append(0)
+                if i in winnerIndices:
+                    #This player is in the war. Play their hand
+                    player = players[i]
+        
+                    #if the player has enough cards
+                    if len(player) >= 4:
+                        #draw three
+                        for i in range(3):
+                            card = player.pop(0)
+                            cardsPlayed.append(card)
+                        #draw and use the fourth
+                        card = player.pop(0)
+                        cardsPlayed.append(card)
+                        cardValues.append(card[2])
+                    elif len(player) > 0:
+                        #take their last card and add the rest to cards played
+                        card = player.pop(-1)
+                        cardsPlayed.append(card)
+                        cardValues.append(card[2])
+                        for card in player:
+                            cardsPlayed.append(player.pop(0))
+                    else:
+                        cardValues.append(0)
                 else:
-                    for i in range(3):
-                        if len(players[i]) >= 2:
-                            cardsPlayed.append(players[i].pop())
-                    card = players[i].pop()
-                    cardsPlayed.append(card)
-                    cardValues.append(card[2])
+                    #this player not in the war
+                    cardValues.append(0)
 
-            maxCard = max(cardValues)
-            maxCardCount = cardValues.count(maxCard)
-            if maxCardCount == 1:
-                #war over
-                war = False
-                winnerIndex = cardValues.index(maxCard)
+            maxValue = max(cardValues)
+            #if there is one winner, award the cards and end the war. Otherwise continue war
+            # print('players:')
+            # for player in players:
+            #     print(player)
+            # print(cardValues)
+            # print(maxValue)
+            if cardValues.count(maxValue) == 1:
+                winningIndex = cardValues.index(maxValue)
+                # print(winningIndex)
                 for card in cardsPlayed:
-                    players[winnerIndex].append(card)
+                    players[winningIndex].append(card)
+                isWar = False
+                cardValues = []
+                cardsPlayed = []
+                
+    #keep track of how many cards each player has
+    for i in range(len(players)):
+        playerCardCounts[playerNames[i]].append(len(players[i]))
 
-            
-    else:
-        winningPlayerIndex = cardValues.index(maxCard)
-        for card in cardsPlayed:
-            players[winningPlayerIndex].append(card)
+    
+    #remove players who have no cards
+    i = 0
+    while i < len(players):
+        #if player has no cards, remove them then continue at current index. otherwise check next players
+        if len(players[i]) == 0:
+            players.pop(i)
+            playerNames.pop(i)
+        else:
+            i += 1
+        
 
+print(playerNames[0] + " wins!")
+for player in playerCardCounts:
+    print(playerCardCounts[player])
 
-    #compare top cards and give cards to the winner
-    #if there is a tie, play war
-    ##each contender puts three cards face down and draws one card
+#make graph
+turnCounter = []
+maxTurn = 0
+for player in playerCardCounts:
+    playerLastTurn = len(playerCardCounts[player])
+    if playerLastTurn > maxTurn:
+        maxTurn = playerLastTurn
+for turn in range(maxTurn):
+    turnName = turn + 1
+    turnCounter.append(turnName)
 
-for i in range(len(players)):
-    player = players[i]
-    if len(player) == 52:
-        print('player ' + str(i) + ' has won!')
+for player in playerCardCounts:
+    cardCount = playerCardCounts[player]
+    while len(cardCount) < len(turnCounter):
+        cardCount.append(0)
+    pyplot.plot(turnCounter,cardCount)
+
+pyplot.show()
