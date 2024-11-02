@@ -174,8 +174,8 @@ while len(players) > 1:
         
 
 print(playerNames[0] + " wins!")
-for player in playerCardCounts:
-    print(playerCardCounts[player])
+# for player in playerCardCounts:
+#     print(playerCardCounts[player])
 
 #make graph
 turnCounter = []
