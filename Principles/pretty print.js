@@ -33,15 +33,8 @@ let textToPrint = "supercalifragilisticexpialidocious";
 for(let i = 0; i < textToPrint.length; i++)
 {
     let letter = textToPrint[i];
-    let isVowel = false;
-    vowels.forEach((vowel) =>
-    {
-        if(vowel === letter)
-        {
-            isVowel = true;
-        }
-    })
-    if(isVowel)
+    
+    if(vowels.includes(letter))
     {
         prettyPrint(letter, "green");
     }
