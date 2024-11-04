@@ -1,3 +1,4 @@
+package com.analyze;
 public class Answer {
     public double time;
     public String answer;
