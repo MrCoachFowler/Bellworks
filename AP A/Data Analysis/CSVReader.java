@@ -22,14 +22,14 @@ public class CSVReader {
                 data.add(values);
             }
 
-            // for(String[] line : this.data)
-            // {
-            //     for(String value : line)
-            //     {
-            //         System.out.print(value + ", ");
-            //     }
-            //     System.out.println();
-            // }
+            for(String[] line : this.data)
+            {
+                for(String value : line)
+                {
+                    System.out.print(value + ", ");
+                }
+                System.out.println();
+            }
             
         } catch (FileNotFoundException e)
         {
