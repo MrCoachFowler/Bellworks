@@ -46,7 +46,15 @@ def createNewShuffledDeck():
 
     return deck
 
-
+def removePlayers(players, playerNames):
+    i = 0
+    while i < len(players):
+        #if player has no cards, remove them then continue at current index. otherwise check next players
+        if len(players[i]) == 0:
+            players.pop(i)
+            playerNames.pop(i)
+        else:
+            i += 1
 
 deck = createNewShuffledDeck()
 
@@ -128,7 +136,7 @@ while len(players) > 1:
                         card = player.pop(0)
                         cardsPlayed.append(card)
                         cardValues.append(card[2])
-                    elif len(player) > 0:
+                    elif len(player) >= 1:
                         #take their last card and add the rest to cards played
                         card = player.pop(-1)
                         cardsPlayed.append(card)
@@ -140,6 +148,7 @@ while len(players) > 1:
                 else:
                     #this player not in the war
                     cardValues.append(0)
+
 
             maxValue = max(cardValues)
             #if there is one winner, award the cards and end the war. Otherwise continue war
@@ -163,14 +172,7 @@ while len(players) > 1:
 
     
     #remove players who have no cards
-    i = 0
-    while i < len(players):
-        #if player has no cards, remove them then continue at current index. otherwise check next players
-        if len(players[i]) == 0:
-            players.pop(i)
-            playerNames.pop(i)
-        else:
-            i += 1
+    removePlayers(players, playerNames)
         
 
 print(playerNames[0] + " wins!")
