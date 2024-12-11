@@ -1,11 +1,24 @@
 
-
 public class run {
     public static void main(String[] args) 
     {
-        IsPrime primeChecker = new IsPrime(183279324);
-        System.out.println("The first method yields: " + primeChecker.isPrime1);
-        System.out.println("The second method yields: " + primeChecker.isPrime2);
+        int numRounds = 4;
+        int value = 5;
+
+        for(int i = 0; i < numRounds; i++)
+        {
+            boolean gotValue = false;
+            while(!gotValue)
+            {
+                int rndVal = (int) Math.random() * 10;
+                System.out.print(rndVal);
+                if(rndVal == value)
+                {
+                    gotValue = true;
+                }
+            }
+            System.out.println();
+        }
     }
     
 }

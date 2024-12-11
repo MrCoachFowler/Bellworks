@@ -19,10 +19,10 @@ def timer():
 #tells a user they are fast if it is under 100 milliseconds and slow if above (if exactly 50, call them a wizard!)
 
 timeTaken = timer()
-print(timeTaken)
+print('time taken: ' + str(timeTaken))
 if(timeTaken < 100):
     print('you are fast!')
 elif timeTaken == 100:
     print('you are a wizard!')
 else:
-    print('you are slow')
+    print('maybe a little faster next time..')
