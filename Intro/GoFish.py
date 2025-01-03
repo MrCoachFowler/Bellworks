@@ -116,7 +116,7 @@ while gameRunning:
     
 
     currentPlayer = players[turnIndex]
-    input('Switch to player', currentPlayer.name)
+    input('Switch to player '+ currentPlayer.name)
     os.system('clear')
     print('Current Sets:', ', '.join(currentPlayer.sets))
 
