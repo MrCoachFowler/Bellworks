@@ -2,7 +2,7 @@
 #purpose: create a dictionary that keeps track of what words were in a string and how often they were used
 #input: a string containing words
 #output: a dictionary with keys of words and value of how many times they appear in the string
-def wordFrequency(paragraph):
+def storyToAList(paragraph):
     #remove all punctuation (add to list if needed)
     punctuations = [",", ".", "!", "?", ";", ":", "'", '"', "%", "$", "#", "@", "^", "&", "*", "(", ")" ,"\n"]
     for punctuation in punctuations:
@@ -14,22 +14,8 @@ def wordFrequency(paragraph):
     #split the paragraph into a list of words
     wordList = paragraph.split(" ")
 
-    #initialize dictionary to add to
-    wordFreq = {}
-    #for each word in the paragraph...
-    for word in wordList:
-        #see if word exists in dictionary already
-        if wordFreq.get(word, 0) > 0:
-            #if word in, increase count by 1
-            wordFreq[word] += 1
-        else:
-            #if new word, add it and set value to 1
-            wordFreq[word] = 1
-
-    # for word in wordFreq:
-    #     print(word + ' appeared ' + str(wordFreq[word]) + ' time(s)')
-    return wordFreq
-
+    #print(wordList)
+    return wordList
 
     
 
@@ -39,5 +25,11 @@ What truly sets Rainbow Road apart is its notorious difficulty. The lack of barr
 
 Furthermore, Rainbow Road has become a symbol of the Mario Kart series, representing both nostalgia and a benchmark for future tracks. Its enduring presence across multiple installments of the game showcases its popularity and the affection fans have for it. Each iteration introduces new elements and challenges while retaining the core essence that makes Rainbow Road beloved. Whether racing against friends in multiplayer or going solo in time trials, players are drawn to the allure of this iconic track, making it a definitive favorite in the Mario Kart universe."""
 
-
-wordFreq = wordFrequency(testString)
+#Feel free to print wordsToCount to see the word list
+wordsToCount = storyToAList(testString)
+wordFreq = {}
+#todo: count the frequency of each word into a dictionary
+print(wordsToCount)
+for word in wordsToCount:
+    #if this word is already in our dictionary, add one to its value
+    #add this word to our dictionary

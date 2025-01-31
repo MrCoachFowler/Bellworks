@@ -1,4 +1,17 @@
-public class Main {
+public class Person 
+{
+    String name;
+    int id;
+    String hairColor;
+
+    public Person(String name, int id, String hairColor) //"Fowler", 1, "brown"
+    {
+        this.name = name;
+        this.id = id;
+        this.hairColor = hairColor;
+    }
+}
+
 
     //Make attributes to store the following information:
     //name
@@ -20,4 +33,4 @@ public class Main {
 
     //write a run file that:
     //
-}
+

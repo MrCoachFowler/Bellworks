@@ -1,5 +1,6 @@
 
-public class run {
+public class run 
+{
     public static void main(String[] args) 
     {
         String lit = "ABCDEFG";

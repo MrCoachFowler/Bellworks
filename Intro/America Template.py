@@ -22,3 +22,11 @@ def addWhiteStarWithBlueBackToString(string):
 ##rows that have 6 stars will have red stripes next to them, 5s will have white
 #ours will have 9 stripes alongside the stars and 4 underneath alternating red and white starting with red
 #the width of the stripe section will be equal to the star section on the top
+string = ""
+for i in range(5):
+    string = addRedSpaceToString(string)
+print(string)
+string = ""
+for j in range(5):
+    string = addWhiteStarWithBlueBackToString(string)
+print(string)
