@@ -1,22 +1,11 @@
-<<<<<<< HEAD
-let counter_thing=0
-function counter(numToCount)
+function gradeFromPercentage(percentage)
 {
-    while (counter_thing <= numToCount) {
-        console.log(counter_thing)
-        counter_thing++
-    }
+    if (percentage >= 90) {return "A"}
+    else if (percentage >= 80) {return "B"}
+    else if (percentage >= 70) {return "C"}
+    else if (percentage >= 60) {return "D"}
+    else {return "F"}
 }
 
-counter(10)
-counter(20)
-=======
-function doThing()
-{
-    let superImportantVariable = "Breakfast Burritos";
-    return superImportantVariable;
-}
-
-let x = doThing();
-console.log(x);
->>>>>>> 4839a348b46793ea53533315ad868c742953aa4d
+let grade = gradeFromPercentage(74)
+console.log(grade)

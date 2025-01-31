@@ -14,7 +14,8 @@ def wordFrequency(paragraph):
     #split the paragraph into a list of words
     wordList = paragraph.split(" ")
 
-    print(wordList)
+    #print(wordList)
+    return wordList
 
     
 
@@ -24,5 +25,6 @@ What truly sets Rainbow Road apart is its notorious difficulty. The lack of barr
 
 Furthermore, Rainbow Road has become a symbol of the Mario Kart series, representing both nostalgia and a benchmark for future tracks. Its enduring presence across multiple installments of the game showcases its popularity and the affection fans have for it. Each iteration introduces new elements and challenges while retaining the core essence that makes Rainbow Road beloved. Whether racing against friends in multiplayer or going solo in time trials, players are drawn to the allure of this iconic track, making it a definitive favorite in the Mario Kart universe."""
 
-
-wordFrequency(testString)
+#Feel free to print wordsToCount to see the word list
+wordsToCount = wordFrequency(testString)
+#todo: count the frequency of each word into a dictionary
