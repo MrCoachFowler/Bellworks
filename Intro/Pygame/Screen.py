@@ -1,8 +1,7 @@
-import pygame
-
 class Screen:
 
-    def __init__(self, colorRGB):
+    def __init__(self, window, colorRGB):
+        self.surface = window.screen
         self.elements = []
         self.color = colorRGB
 
@@ -12,4 +11,8 @@ class Screen:
     def removePageElement(self, pageElement):
         self.elements.remove(pageElement)
 
+    def display(self):
+        for e in self.elements:
+            e.display(self.surface)
+        
         

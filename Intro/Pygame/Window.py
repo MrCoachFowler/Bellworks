@@ -4,7 +4,8 @@ from Screen import Screen
 class Window:
 
     def __init__(self, title="Test App", colorRGB=False):
-        self.screen = pygame.display.set_mode((1920, 1080))
+        pygame.init()
+        self.screen = pygame.display.set_mode((800, 600))
         pygame.display.set_caption(title)
         self.color = (0, 0, 0)
         if colorRGB:
@@ -24,12 +25,17 @@ class Window:
             self.screen.fill(self.color)
         pygame.display.flip()
 
-    def checkForInput(self):
+    def checkForInput(self, screen):
         #check for inputs
         for event in pygame.event.get():
-            print(event)
             #handle various inputs
             ##quit type    
             if event.type == pygame.QUIT: 
                 pygame.quit()
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                clickLoc = pygame.mouse.get_pos()
+                for e in screen.elements:
+                    if e.wasClicked(clickLoc):
+                        e.onClick()
 
