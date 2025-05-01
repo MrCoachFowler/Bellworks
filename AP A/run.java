@@ -9,6 +9,8 @@ public class run
 
         System.out.println(litPart);
         System.out.println(lit);
+
+        Musician m = new Musician("Guitar");
         
     }
 }
