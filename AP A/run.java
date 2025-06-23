@@ -11,6 +11,11 @@ public class run
         };
         Helper.boxPrintColMajor(tester);
 
+
+        System.out.println(litPart);
+        System.out.println(lit);
+
+        Musician m = new Musician("Guitar");
         
     }
 
