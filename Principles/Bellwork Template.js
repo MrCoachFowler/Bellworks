@@ -1,7 +1,7 @@
 //Create a function following this contract:
-//Name:
+//Name: 
 //Purpose: 
-//Input:
+//Input: 
 //Output: 
 
 

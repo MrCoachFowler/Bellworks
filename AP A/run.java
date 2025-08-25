@@ -3,35 +3,14 @@ public class run
 {
     public static void main(String[] args) 
     {
-        String[][] tester = {
-            {"Hello", "Brave", "New", "World"},
-            {"Skibidi", "Rizz", "Locked in", "Yeet"},
-            {"I", "Love", "Computer Science", "The Most"},
-            {"Christine", "Lucas", "Will", "Lucas"}
-        };
-        Helper.boxPrintColMajor(tester);
 
-
-        System.out.println(litPart);
-        System.out.println(lit);
-
-        Musician m = new Musician("Guitar");
+        System.out.println(Test.getTotalAverage());
         
-    }
+        Test t1 = new Test(80, 100);
+        Test t2 = new Test(9, 10);
 
-    public static void print2DArray(Object[][] arr)
-    {
-        for(Object[] row : arr)
-        {
-            System.out.println("------------------------------");
-            for(Object val : row)
-            {
-                System.out.print(" | " + val);
-            }
-            System.out.println(" |");
-        }
-        System.out.println("------------------------------");
+        System.out.println(t1.getPercentage());
+        System.out.println(t2.getPercentage());
+        System.out.println(Test.getTotalAverage());
     }
-
-    
 }
