@@ -31,7 +31,7 @@ public class Run {
                     System.out.println(player.getName() + "'s turn!");
                     player.printScoreboard();
                     player.printDiceInRoll();
-                    player.keepDice(scanner);
+                    player.keepDice(scanner); //asks needless after last roll... zzzzz....
                 }
                 player.holdAllDice(); //if there are unheld dice still..
                 //player updates their scoreboard
