@@ -6,7 +6,7 @@ function randNumBetween(min, max)
 
 //Create a function following this contract:
 //Name: avg
-//Purpose: Find the average of a list of numbers
+//Purpose: Find the average of an array of numbers
 //Input: a array of numbers
 //Output: the average of those numbers
 
@@ -19,7 +19,7 @@ function randNumBetween(min, max)
 
 
 //Create a program that:
-//Creates a list of 1000 random numbers between 1 and 50
+//Creates an array of 1000 random numbers between 1 and 50
 //Calculate and print the average of those numbers
 //Calculate and print the standard deviation of those numbers
 

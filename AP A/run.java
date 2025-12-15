@@ -1,16 +1,17 @@
-
 public class run 
 {
+    public static Example test1(Example ex)
+    {
+        ex.updateVal();
+        return ex;
+    }
+
     public static void main(String[] args) 
     {
+        Example e = new Example();
+        Example e2 = test1(e);
 
-        System.out.println(Test.getTotalAverage());
-        
-        Test t1 = new Test(80, 100);
-        Test t2 = new Test(9, 10);
-
-        System.out.println(t1.getPercentage());
-        System.out.println(t2.getPercentage());
-        System.out.println(Test.getTotalAverage());
+        System.out.println(e);
+        System.out.println(e2);
     }
 }

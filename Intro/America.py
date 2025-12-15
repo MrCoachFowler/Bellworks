@@ -22,8 +22,7 @@ def addEmptyBlueSpacesToString(string, numSpaces):
 
 #TODO: finish this function to make the desired american flag 
 #stars are 5 rows of six with 4 rows of 5 between them
-#ours will have 9 stripes alongside the stars and 4 underneath alternating red and white starting with red
-#the width of the stripe section will be equal to the star section on the top
+#Ours will have different spacing of stripes, but there must still be 13 stripes and some must be side by side with the stars
 for i in range(13):
     string = ""
     #if in a star section...
