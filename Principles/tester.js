@@ -1,22 +1,9 @@
-<<<<<<< HEAD
-let counter_thing=0
-function counter(numToCount)
-{
-    while (counter_thing <= numToCount) {
-        console.log(counter_thing)
-        counter_thing++
-    }
-}
+let str1 = "Hello World";
+let str2 = "Goodbye Space";
+let str3 = "Later Alligator";
 
-counter(10)
-counter(20)
-=======
-function doThing()
-{
-    let superImportantVariable = "Breakfast Burritos";
-    return superImportantVariable;
-}
-
-let x = doThing();
-console.log(x);
->>>>>>> 4839a348b46793ea53533315ad868c742953aa4d
+console.log(str1.substring(6));
+let str3Length = str3.length;
+console.log(str2.substring(0, 4) + " " + str3.substring(str3Length - 5));
+console.log(str3.substring(4, 8) + str1.substring(0,6));
+console.log(str3.substring(5,0))

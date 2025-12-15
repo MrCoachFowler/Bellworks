@@ -8,7 +8,7 @@ public class Bank {
     String password;
 
     //Create a Constructor
-    Bank(String name, String password)
+    public Bank(String name, String password)
     {
         this.name = name;
         this.password = password;
