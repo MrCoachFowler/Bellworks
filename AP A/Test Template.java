@@ -1,4 +1,5 @@
 public class Main {
+
     //Make attributes to store the following information:
     //name
     //school session

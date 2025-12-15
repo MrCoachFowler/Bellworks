@@ -3,9 +3,9 @@ public class Bank {
     //account name
     //account balance
     //account password
-    String name;
-    double balance;
-    String password;
+    private String name;
+    private double balance;
+    private String password;
 
     //Create a Constructor
     public Bank(String name, String password)

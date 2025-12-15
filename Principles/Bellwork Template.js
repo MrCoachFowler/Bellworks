@@ -1,10 +1,11 @@
 //Create a function following this contract:
-//Name:
+//Name: 
 //Purpose: 
-//Input:
+//Input: 
 //Output: 
 
 
 
 //Create a program that:
+//
 //

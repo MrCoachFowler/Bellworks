@@ -7,7 +7,7 @@ public class ShapePrinter {
     
     //make a constructor
     //empty
-    ShapePrinter()
+    public ShapePrinter()
     {
         //pass
     }
@@ -92,8 +92,10 @@ public class ShapePrinter {
         }
     }
 
-    //write a test file that:
+    //write a run  file that:
+    //creates a new ShapePrinter Object
     //prints a left triangle of size 4
     //prints a right triangle of size 5
     //prints a rectangle of size 8
+
 }
