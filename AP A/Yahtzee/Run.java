@@ -15,7 +15,7 @@ public class Run {
         }
         clearScreen();
 
-        for(int i = 0; i < 13; i++)
+        for(int i = 0; i < 13; i++) //TODO: this is a little lazy, need to write a method to check if a player is done (this only allows for one yahtzee per player per game by turn count)
         {
             for(Player player : players)
             {
