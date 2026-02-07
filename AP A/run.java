@@ -8,15 +8,22 @@ public class run
 
     public static void main(String[] args) 
     {
-<<<<<<< HEAD
-        System.out.println("Hello World");
-        System.out.print("\033[H\033[2J");
-=======
-        Example e = new Example();
-        Example e2 = test1(e);
+        int a = 1;
+        boolean b = true;
+        double x = 2.5;
+        String s = "Hello";
 
-        System.out.println(e);
-        System.out.println(e2);
->>>>>>> e0a5c590761ea29fd67c4ac8c762aea63c42de47
+        String ex1 = s + a;
+        String ex2 = s + b;
+        String ex3 = s + x;
+
+        String ex4 = a + 5 + s + x + 1.5;
+
+        System.out.println(ex1);
+        System.out.println(ex2);
+        System.out.println(ex3);
+        System.out.println(ex4);
+        
+        
     }
 }
